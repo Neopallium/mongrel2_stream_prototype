@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Test mongrel2 stream interface</title>
+</head>
+<body>
+Old handler interface:<br>
+<a href="/test/direct">Direct response</a><br>
+<form name="direct_uploadform" id="direct_uploadform" action="/test/direct/upload" enctype="multipart/form-data" method="post">
+	<fieldset>
+		<legend>Direct file upload:</legend>
+		<input id="userfile" label="userfile" name="userfile" type="file">
+		<input value="Direct Upload" type="submit"><br>
+	</fieldset>
+</form>
+Prototype handler stream interface:<br>
+<a href="/test/stream">Stream response</a><br>
+<form name="stream_uploadform" id="stream_uploadform" action="/test/stream/upload" enctype="multipart/form-data" method="post">
+	<fieldset>
+		<legend>Stream file upload:</legend>
+		<input id="userfile" label="userfile" name="userfile" type="file">
+		<input value="Stream Upload" type="submit"><br>
+	</fieldset>
+</form>
+</body>
+</html>
