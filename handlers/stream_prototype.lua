@@ -12,13 +12,19 @@ local z_RCVMORE = zmq.RCVMORE
 local zpoller = require"zmq.poller"
 
 local vprint = function() end
+local add_delay = 0
 
 -- check for verbose mode
 for i=1,#arg do
 	if arg[i] == '-V' then
 		vprint = print
 	end
+	if arg[i] == '-d' then
+		add_delay = tonumber(arg[i+1])
+	end
 end
+
+print("Usage: " .. arg[0] .. " [-V] [-d <delay stream IO seconds>]")
 
 local STREAM_BODY = true
 
@@ -351,7 +357,7 @@ local last_flush = time()
 while poller:poll(100 * 1000) do
 	local ts = time()
 	-- delay sending acks by about 1 second, just to simulate slow I/O
-	if (ts - last_flush) >= 1 then
+	if (ts - last_flush) >= add_delay then
 		flush_acks()
 		last_flush = ts
 	end
