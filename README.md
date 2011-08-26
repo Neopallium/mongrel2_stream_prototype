@@ -1,7 +1,10 @@
 Mongrel2 prototype stream interface
 ====================================
 
-Prototype a stream interface between mongrel2 and backend handlers. 
+Prototype a stream interface between mongrel2 and backend handlers.
+
+The basic idea of the stream interface is to give backend handler flow-control over
+sending/recving large amounts of data to/from the client connection in mongrel2.
 
 
 Start test
