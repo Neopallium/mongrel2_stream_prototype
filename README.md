@@ -41,3 +41,5 @@ Start old style test handler:
 	lua handlers/direct_test.lua
 
 
+Note: You can use the "-V" option to enable verbose output from the lua handlers.
+
